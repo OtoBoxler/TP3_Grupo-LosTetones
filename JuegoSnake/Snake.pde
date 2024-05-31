@@ -47,4 +47,13 @@ class Snake{
     }
   }
  
+  boolean come(ArrayList<Animal> animales) {
+    for (Animal animal : animales) {
+      if (cabeza.posicion.dist(animal.posicion) < 20) {
+        return true;
+      }
+    }
+    return false;
+  }
+ 
 }
