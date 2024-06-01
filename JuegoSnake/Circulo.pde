@@ -1,14 +1,14 @@
-class Cuadrado{
+class Circulo{
   PVector posicion;
-  int tamano;
+  float tamano;
   
-  Cuadrado(PVector posicion, int tamano){
+  Circulo(PVector posicion, float tamano){
     this.posicion=posicion;
     this.tamano=tamano;
   }
   
   void draw(){
     fill(#8CE57B);
-    rect(posicion.x, posicion.y, tamano, tamano);
+    circle(posicion.x, posicion.y, tamano);
   }
 }

@@ -1,12 +1,12 @@
 class Snake{
-  Cuadrado cabeza;
-  ArrayList<Cuadrado> cuerpo;
+  Circulo cabeza;
+  ArrayList<Circulo> cuerpo;
   String direccion;
   float velocidad;
   
   Snake(){
-    cabeza= new Cuadrado(new PVector(width/2, height/2), 20);
-    cuerpo= new ArrayList<Cuadrado>();
+    cabeza= new Circulo(new PVector(width/2, height/2), 20);
+    cuerpo= new ArrayList<Circulo>();
     direccion= "RIGHT";
     velocidad=4.0;
   }
@@ -31,18 +31,18 @@ class Snake{
     cabeza.posicion = nuevaPosicion;
     if (!cuerpo.isEmpty()) {
       cuerpo.remove(cuerpo.size() - 1);
-      cuerpo.add(0, new Cuadrado(nuevaPosicion.copy(), 20));
+      cuerpo.add(0, new Circulo(nuevaPosicion.copy(), 20));
     }
   }
   
   void crecer() {
     PVector nuevaPosicion = cuerpo.isEmpty() ? cabeza.posicion.copy() : cuerpo.get(cuerpo.size() - 1).posicion.copy();
-    cuerpo.add(new Cuadrado(nuevaPosicion, 20));
+    cuerpo.add(new Circulo(nuevaPosicion, 20));
   }
 
   void dibujar() {
     cabeza.draw();
-    for (Cuadrado parte : cuerpo) {
+    for (Circulo parte : cuerpo) {
       parte.draw();
     }
   }
